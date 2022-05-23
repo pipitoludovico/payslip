@@ -2,8 +2,8 @@ package Impiegato;
 
 public class Dipendente
 {
-    private int salario = 1000;
-    private String nome;
+    private static int salario = 1000;
+    private static String nome;
 
     Dipendente()
     {
@@ -11,23 +11,22 @@ public class Dipendente
 
     Dipendente(String nome)
     {
-        this.setNome(nome);
+        Dipendente.setNome(nome);
+    }
+    
+    public static void setSalario(int salario)
+    {
+        Dipendente.salario = salario;
     }
 
-
-    public int getSalario()
+    public static int getSalario()
     {
         return salario;
     }
 
-    public void setSalario(int salario)
+    public static void setNome(String nome)
     {
-        this.salario = salario;
-    }
-
-    public void setNome(String nome)
-    {
-        this.nome = nome;
+        Dipendente.nome = nome;
     }
 
     public String getNome()
@@ -35,8 +34,17 @@ public class Dipendente
         return nome;
     }
 
-    public String getid()
+    public void getid()
     {
-        return "I'm a generic employee!";
+        System.out.println("I am an employee!");
+    }
+    public static class Tester extends Dipendente{
+        Tester(String nome){
+            Tester.setNome(nome);
+        }
+        public static int getTestSalario(){
+            return Dipendente.getSalario() +500;
+        }
+
     }
 }

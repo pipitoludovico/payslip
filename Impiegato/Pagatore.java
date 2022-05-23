@@ -17,10 +17,10 @@ public class Pagatore
         ListaDipendenti lista = new ListaDipendenti();
         lista.addElement(new Dipendente("Gianni"));
         lista.addElement(new Dev("Diablo"));
-        lista.addElement(new Dipendente("Baal"));
+        lista.addElement(new Dev("Baal"));
         lista.addElement(new Dev("Mephisto"));
-        lista.addElement(new Dev("Baba"));
-        lista.addElement(new Dipendente("Baba"));
+        lista.addElement(new Dipendente.Tester("Barbarian"));
+        System.out.println(Dipendente.Tester.getTestSalario());
 
         System.out.println("Buisness credit: " + credito + "\n\n");
         System.out.println("Let's pay employees: \n");
@@ -40,14 +40,14 @@ public class Pagatore
             {
                 if (x instanceof Dev)
                 {
-                    System.out.println("questo è un Dev e si chiama : " + ((Dev) x).getNome() + ": ed il suo salario è di " + ((Dev) x).getDevSalario());
-                    credito -= ((Dev) x).getDevSalario();
+                    System.out.println("questo è un Dev e si chiama : " + ((Dev) x).getNome() + ": ed il suo salario è di " + Dev.getDevSalario());
+                    credito -= Dev.getDevSalario();
                 }
                 else if (x instanceof Dipendente)
                 {
                     ((Dipendente) x).getid();
-                    System.out.println("Questo è un Dipendente Generico, si chiama: " + ((Dipendente) x).getNome() + " ed il suo salario è di: " + ((Dipendente) x).getSalario());
-                    credito -= ((Dipendente) x).getSalario();
+                    System.out.println("Questo è un Dipendente Generico, si chiama: " + ((Dipendente) x).getNome() + " ed il suo salario è di: " + Dipendente.getSalario());
+                    credito -= Dipendente.getSalario();
                 }
             }
             System.out.println("credito rimasto: " + credito);

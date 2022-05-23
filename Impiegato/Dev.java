@@ -2,23 +2,29 @@ package Impiegato;
 
 public class Dev extends Dipendente
 {
-    private int devSalario = 2000;
+    private static int devSalario = 2000;
 
-    Dev(){}
-    Dev(String nome){this.setNome(nome);}
-
-    public void setDevSalario(int devSalario)
+    Dev()
     {
-        this.devSalario = devSalario;
     }
 
-    public int getDevSalario()
+    Dev(String nome)
+    {
+        Dev.setNome(nome);
+    }
+
+    public static void setDevSalario(int devSalario)
+    {
+        Dev.devSalario = devSalario;
+    }
+
+    public static int getDevSalario()
     {
         return devSalario;
     }
 
-    public String getid()
+    public void getid()
     {
-        return "I'm a Dev!";
+        System.out.println("I'm a Dev!");
     }
 }
